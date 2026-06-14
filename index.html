@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ken Profile</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#2563eb;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+h1,h2{
+    margin-top:0;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #334155;
+    padding:10px 0;
+}
+
+.info:last-child{
+    border:none;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#about,#games{
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🎮 KEN</h1>
+    <p>Roblox & Valorant Player</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <button onclick="showTab('about')">Profil</button>
+    <button onclick="showTab('games')">Gaming</button>
+</div>
+
+<div class="card" id="about">
+    <h2>👤 Profil</h2>
+
+    <div class="info">
+        <span>Nama</span>
+        <span>Ken</span>
+    </div>
+
+    <div class="info">
+        <span>Umur</span>
+        <span>13</span>
+    </div>
+
+    <div class="info">
+        <span>Warna Favorit</span>
+        <span>Biru</span>
+    </div>
+
+    <div class="info">
+        <span>TikTok</span>
+        <span>@tiktok_kamu</span>
+    </div>
+</div>
+
+<div class="card" id="games">
+    <h2>🎮 Gaming</h2>
+
+    <div class="info">
+        <span>Game Favorit</span>
+        <span>Roblox</span>
+    </div>
+
+    <div class="info">
+        <span>Game Kedua</span>
+        <span>Valorant</span>
+    </div>
+
+    <div class="info">
+        <span>Hobi</span>
+        <span>Gaming Robloxxx 😭</span>
+    </div>
+</div>
+
+</div>
+
+<script>
+function showTab(tab){
+    document.getElementById("about").style.display="none";
+    document.getElementById("games").style.display="none";
+
+    document.getElementById(tab).style.display="block";
+}
+
+showTab("about");
+</script>
+
+</body>
+</html>
