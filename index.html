@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ken | Profile</title>
+<title>KEN | Gamer Profile</title>
 
 <style>
 
@@ -16,11 +16,14 @@ font-family:'Segoe UI',sans-serif;
 
 body{
 min-height:100vh;
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+background:
+radial-gradient(circle at top,#3b82f6 0%,transparent 30%),
+radial-gradient(circle at bottom,#1d4ed8 0%,transparent 30%),
+#020617;
+padding:20px;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
 }
 
 .container{
@@ -29,51 +32,74 @@ max-width:900px;
 }
 
 .profile{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:25px;
-padding:40px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:30px;
+overflow:hidden;
 color:white;
-box-shadow:0 0 30px rgba(0,0,0,.3);
+box-shadow:0 0 50px rgba(0,0,0,.4);
+}
+
+.profile::before{
+content:"";
+display:block;
+height:5px;
+background:linear-gradient(90deg,#60a5fa,#2563eb,#1d4ed8);
+}
+
+.banner{
+height:220px;
+background:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200') center/cover;
+}
+
+.content{
+padding:30px;
+margin-top:-90px;
 }
 
 .avatar{
-width:160px;
-height:160px;
+width:180px;
+height:180px;
 border-radius:50%;
 object-fit:cover;
 display:block;
 margin:auto;
-border:4px solid rgba(255,255,255,.2);
-box-shadow:0 0 40px rgba(59,130,246,.8);
+border:5px solid rgba(255,255,255,.15);
+box-shadow:
+0 0 25px #3b82f6,
+0 0 60px #2563eb;
 }
 
 h1{
 text-align:center;
 margin-top:20px;
-font-size:40px;
+font-size:55px;
+letter-spacing:3px;
+text-shadow:0 0 25px #3b82f6;
 }
 
 .bio{
 text-align:center;
-opacity:.8;
 margin-top:10px;
+opacity:.8;
+font-size:17px;
 }
 
 .tabs{
 display:flex;
-gap:10px;
 justify-content:center;
+gap:10px;
 margin-top:30px;
+flex-wrap:wrap;
 }
 
 button{
-padding:12px 20px;
-border:none;
-border-radius:12px;
 background:#2563eb;
+border:none;
+padding:12px 20px;
 color:white;
+border-radius:12px;
 cursor:pointer;
 font-weight:bold;
 transition:.3s;
@@ -89,8 +115,8 @@ margin-top:25px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
-padding:15px;
+background:rgba(255,255,255,.05);
+padding:15px 20px;
 border-radius:15px;
 margin-bottom:10px;
 display:flex;
@@ -100,7 +126,24 @@ justify-content:space-between;
 .footer{
 text-align:center;
 margin-top:25px;
-opacity:.7;
+opacity:.6;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:40px;
+}
+
+.avatar{
+width:140px;
+height:140px;
+}
+
+.card{
+font-size:14px;
+}
+
 }
 
 </style>
@@ -111,15 +154,19 @@ opacity:.7;
 
 <div class="profile">
 
+<div class="banner"></div>
+
+<div class="content">
+
 <img
 class="avatar"
 src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500"
-alt="Gaming Profile">
+alt="Profile">
 
 <h1>KEN</h1>
 
 <p class="bio">
-13 Years Old • Roblox Player • Valorant Player
+🎮 Roblox Player • Valorant Player • 13 Years Old
 </p>
 
 <div class="tabs">
@@ -165,18 +212,20 @@ alt="Gaming Profile">
 
 <div class="card">
 <span>Hobi</span>
-<span>Gaming 🎮</span>
+<span>Gaming</span>
 </div>
 
 <div class="card">
 <span>Status</span>
-<span>Online 😭</span>
+<span>🟢 Online</span>
 </div>
 
 </div>
 
 <div class="footer">
-Made by Ken 💙
+Made By Ken 💙
+</div>
+
 </div>
 
 </div>
@@ -187,8 +236,8 @@ Made by Ken 💙
 
 function showTab(tab){
 
-document.querySelectorAll('.tab').forEach(x=>{
-x.style.display='none';
+document.querySelectorAll('.tab').forEach(item=>{
+item.style.display='none';
 });
 
 document.getElementById(tab).style.display='block';
