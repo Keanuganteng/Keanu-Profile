@@ -3,132 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ken Profile</title>
+<title>Ken | Profile</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#0f172a;
-    color:white;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
-header{
-    background:#2563eb;
-    padding:20px;
-    text-align:center;
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
 
 .container{
-    max-width:800px;
-    margin:auto;
-    padding:20px;
+width:100%;
+max-width:900px;
 }
 
-.card{
-    background:#1e293b;
-    border-radius:15px;
-    padding:20px;
-    margin-bottom:20px;
+.profile{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:25px;
+padding:40px;
+color:white;
+box-shadow:0 0 30px rgba(0,0,0,.3);
 }
 
-h1,h2{
-    margin-top:0;
+.avatar{
+width:120px;
+height:120px;
+border-radius:50%;
+background:linear-gradient(45deg,#60a5fa,#2563eb);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:50px;
+margin:auto;
 }
 
-.info{
-    display:flex;
-    justify-content:space-between;
-    border-bottom:1px solid #334155;
-    padding:10px 0;
+h1{
+text-align:center;
+margin-top:20px;
+font-size:40px;
 }
 
-.info:last-child{
-    border:none;
+.bio{
+text-align:center;
+opacity:.8;
+margin-top:10px;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+justify-content:center;
+margin-top:30px;
 }
 
 button{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:10px;
-    cursor:pointer;
+padding:12px 20px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
 }
 
-#about,#games{
-    display:none;
+button:hover{
+transform:translateY(-3px);
 }
+
+.tab{
+display:none;
+margin-top:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:15px;
+margin-bottom:10px;
+display:flex;
+justify-content:space-between;
+}
+
+.footer{
+text-align:center;
+margin-top:25px;
+opacity:.7;
+}
+
 </style>
 </head>
 <body>
 
-<header>
-    <h1>🎮 KEN</h1>
-    <p>Roblox & Valorant Player</p>
-</header>
-
 <div class="container">
 
+<div class="profile">
+
+<div class="avatar">🎮</div>
+
+<h1>KEN</h1>
+
+<p class="bio">
+13 Years Old • Roblox Player • Valorant Player
+</p>
+
+<div class="tabs">
+<button onclick="showTab('profil')">👤 Profil</button>
+<button onclick="showTab('gaming')">🎮 Gaming</button>
+</div>
+
+<div id="profil" class="tab">
+
 <div class="card">
-    <button onclick="showTab('about')">Profil</button>
-    <button onclick="showTab('games')">Gaming</button>
+<span>Nama</span>
+<span>Ken</span>
 </div>
 
-<div class="card" id="about">
-    <h2>👤 Profil</h2>
-
-    <div class="info">
-        <span>Nama</span>
-        <span>Ken</span>
-    </div>
-
-    <div class="info">
-        <span>Umur</span>
-        <span>13</span>
-    </div>
-
-    <div class="info">
-        <span>Warna Favorit</span>
-        <span>Biru</span>
-    </div>
-
-    <div class="info">
-        <span>TikTok</span>
-        <span>@kenfartsalot</span>
-    </div>
+<div class="card">
+<span>Umur</span>
+<span>13</span>
 </div>
 
-<div class="card" id="games">
-    <h2>🎮 Gaming</h2>
+<div class="card">
+<span>Warna Favorit</span>
+<span>Biru</span>
+</div>
 
-    <div class="info">
-        <span>Game Favorit</span>
-        <span>Roblox</span>
-    </div>
+<div class="card">
+<span>TikTok</span>
+<span>@usernamekamu</span>
+</div>
 
-    <div class="info">
-        <span>Game Kedua</span>
-        <span>Valorant</span>
-    </div>
+</div>
 
-    <div class="info">
-        <span>Hobi</span>
-        <span>Gaming Robloxxx 😭</span>
-    </div>
+<div id="gaming" class="tab">
+
+<div class="card">
+<span>Game Favorit</span>
+<span>Roblox</span>
+</div>
+
+<div class="card">
+<span>Game Kedua</span>
+<span>Valorant</span>
+</div>
+
+<div class="card">
+<span>Hobi</span>
+<span>Gaming 🎮</span>
+</div>
+
+<div class="card">
+<span>Status</span>
+<span>Online 😭</span>
+</div>
+
+</div>
+
+<div class="footer">
+Made by Ken 💙
+</div>
+
 </div>
 
 </div>
 
 <script>
-function showTab(tab){
-    document.getElementById("about").style.display="none";
-    document.getElementById("games").style.display="none";
 
-    document.getElementById(tab).style.display="block";
+function showTab(tab){
+
+document.querySelectorAll('.tab').forEach(x=>{
+x.style.display='none';
+});
+
+document.getElementById(tab).style.display='block';
+
 }
 
-showTab("about");
+showTab('profil');
+
 </script>
 
 </body>
